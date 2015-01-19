@@ -7,11 +7,11 @@
   <script type="text/javascript" src="app.js"></script>
 </head>
 
-<body class="container" ng-controller="ContentController as store">
+<body class="container" ng-controller="ContentController as content">
   <img src="http://i.imgur.com/2GPVGyP.jpg" />
   <h4>Comments</h4>
   <ul>
-    <li ng-repeat="story in store.stories">
+    <li ng-repeat="story in content.stories">
       <blockquote>
         {{story.message}}
         <cite class="clearfix">-{{story.author}}</cite>
