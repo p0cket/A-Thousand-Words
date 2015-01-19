@@ -7,11 +7,11 @@
   <script type="text/javascript" src="app.js"></script>
 </head>
 
-<body class="container" ng-controller="ContentController as content">
+<body class="container" ng-controller="ContentController as contentCtrl">
   <img src="http://i.imgur.com/2GPVGyP.jpg" />
   <h4>Comments</h4>
   <ul>
-    <li ng-repeat="story in content.stories">
+    <li ng-repeat="story in contentCtrl.stories">
       <blockquote>
         {{story.message}}
         <cite class="clearfix">-{{story.author}}</cite>
@@ -20,19 +20,19 @@
   </ul>
 
 
-  <form name="commentForm" ng-controller="NewCommentController as ncCtrl" ng-submit="ncCtrl.addComment(content)">
+  <form name="commentForm" ng-submit="contentCtrl.addComment(content)">
     <h4>Add a new comment</h4>
     <ul ng-show="content">
       <li>
         <blockquote>
-          {{ncCtrl.content.message}}
-          <cite class="clearfix">-{{ncCtrl.content.author}}</cite>
+          {{content.message}}
+          <cite class="clearfix">-{{content.author}}</cite>
         </blockquote>
       </li>
     </ul>
-    <textarea ng-model="ncCtrl.content.message"></textarea>
+    <textarea ng-model="content.message"></textarea>
     <label>By:</label>
-    <input ng-model="ncCtrl.content.author" type="email" />
+    <input ng-model="content.author" type="email" />
   </form>
 
 </body>

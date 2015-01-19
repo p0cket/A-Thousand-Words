@@ -3,16 +3,14 @@
 
   app.controller('ContentController', function() {
     this.stories = postedStories;
-  });
 
-  app.controller('NewCommentController', function() {
-    this.comment = {};
+    this.story = {};
 
     this.addComment = function(content) {
       console.log("executing add comment");
-      $parent.stories.push(this.comment);
+      $parent.stories.push(this.story);
 
-      this.comment = {};
+      this.story = {};
     };
   });
 
