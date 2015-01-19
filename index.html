@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="worth1000">
+
+<head>
+  <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+  <script type="text/javascript" src="angular.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</head>
+
+<body class="container" ng-controller="ContentController as store">
+  <img src="http://i.imgur.com/2GPVGyP.jpg" />
+  <h4>Comments</h4>
+  <ul>
+    <li ng-repeat="story in store.stories">
+      <blockquote>
+        {{story.message}}
+        <cite class="clearfix">-{{story.author}}</cite>
+      </blockquote>
+    </li>
+  </ul>
+
+
+  <form name="commentForm">
+    <h4>Add a new comment</h4>
+    <ul ng-show="story">
+      <li>
+        <blockquote>
+          {{story.message}}
+          <cite class="clearfix">-{{story.author}}</cite>
+        </blockquote>
+      </li>
+    </ul>
+    <textarea ng-model="story.message"></textarea>
+    <label>By:</label>
+    <input ng-model="story.author" type="email" />
+    <input type="submit" value="submit" />
+  </form>
+
+</body>
+
+</html>
