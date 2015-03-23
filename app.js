@@ -6,13 +6,10 @@
   });
 
   app.controller('NewCommentController', function() {
-    this.comment = {};
 
     this.addComment = function(content) {
       console.log("executing add comment");
       $parent.content.stories.push(this.comment);
-
-      this.comment = {};
     };
   });
 
