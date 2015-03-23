@@ -4,14 +4,11 @@
   app.controller('ContentController', function() {
     this.stories = postedStories;
 
-    this.story = {};
-
     this.addComment = function(content) {
       console.log("executing add comment");
-      $parent.stories.push(this.story);
-
-      this.story = {};
+      postedStories.push(content);
     };
+
   });
 
   var postedStories = [{
